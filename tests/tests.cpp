@@ -2,7 +2,7 @@
 
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-#include "Customer.h"
+#include "../sources/Customer.h"
 
 TEST(customer, statement)
 {

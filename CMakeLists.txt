@@ -33,13 +33,13 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Trivial example using gtest and gmock
-add_executable(GEN_LABO5 Customer.cpp
-        Customer.h
-        main.cpp
-        Movie.cpp
-        Movie.h
-        Rental.h
-        tests.cpp)
+add_executable(GEN_LABO5 sources/Customer.cpp
+        sources/Customer.h
+        sources/main.cpp
+        sources/Movie.cpp
+        sources/Movie.h
+        sources/Rental.h
+        tests/tests.cpp)
 
 target_link_libraries(GEN_LABO5 gtest gmock_main)
 add_test(NAME TEST COMMAND GEN_LABO5)
