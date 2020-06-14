@@ -13,6 +13,7 @@ public:
     void addRental( const Rental& arg );
     std::string getName() const;
     std::string statement();
+    double calculateAmount(Rental rental);
 
 private:
     std::string _name;
