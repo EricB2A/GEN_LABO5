@@ -30,6 +30,18 @@ double Customer::calculateAmount(Rental rental){
     return amount;
 }
 
+int Customer::addFrequentRenterPoints(Rental rental){
+   int frequentRenterPoints = 1;
+
+    // add bonus for a two day new release rental
+    if ( ( rental.getMovie().getPriceCode() == Movie::NEW_RELEASE )
+         && rental.getDaysRented() > 1 ){
+        frequentRenterPoints++;
+
+    }
+    return frequentRenterPoints;
+}
+
 string Customer::statement()
 {
     double totalAmount = 0;
@@ -39,13 +51,9 @@ string Customer::statement()
     result << "Rental Record for " << getName() << "\n";
 
     for ( auto each : _rentals ) {
-        double thisAmount = calculateAmount(each);
 
-        // add frequent renter points
-        frequentRenterPoints++;
-        // add bonus for a two day new release rental
-        if ( ( each.getMovie().getPriceCode() == Movie::NEW_RELEASE )
-             && each.getDaysRented() > 1 ) frequentRenterPoints++;
+        double thisAmount = calculateAmount(each);
+        frequentRenterPoints += addFrequentRenterPoints(each);
 
         // show figures for this rental
         result << "\t" << each.getMovie().getTitle() << "\t"
