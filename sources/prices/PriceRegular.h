@@ -6,17 +6,8 @@
 class PriceRegular : public Price {
 public:
 
-    double priceByType(int daysRented){
-        double amount = 2;
-        if(daysRented > 2){
-            amount += (daysRented - 2) * 1.5;
-        }
-        return amount;
-    }
-
-    int frequentRenterPointsByType(int daysRented){
-        return 1;
-    }
+    double priceByType(int daysRented);
+    int frequentRenterPointsByType(int daysRented);
 };
 
 #endif //PRICEREGULAR_H

@@ -6,20 +6,8 @@
 class PriceNewRelease : public Price {
 public:
 
-    double priceByType(int daysRented){
-        return daysRented * 3;
-    }
-
-
-    int frequentRenterPointsByType(int daysRented){
-        if(daysRented > 1){
-            return 2;
-        }
-        return 1;
-    }
-
-
-
+    double priceByType(int daysRented);
+    int frequentRenterPointsByType(int daysRented);
 };
 
 #endif //PRICENEWRELEASE_H
