@@ -12,8 +12,8 @@ int Rental::getDaysRented() const { return _daysRented; }
 const Movie& Rental::getMovie() const { return _movie; }
 
 double Rental::calculateAmount(){
-    double amount = 0;
 
+    /*
     switch ( getMovie().getPriceCode() ) {
         case Movie::REGULAR:
             amount+= 2;
@@ -29,19 +29,13 @@ double Rental::calculateAmount(){
                 amount += ( getDaysRented() - 3 ) * 1.5;
             break;
     }
+     */
 
-    return amount;
+    return _movie.calculateAmount(_daysRented);
 }
 
 int Rental::addFrequentRenterPoints(){
-    int frequentRenterPoints = 1;
-
-    // add bonus for a two day new release rental
-    if ( ( getMovie().getPriceCode() == Movie::NEW_RELEASE ) && getDaysRented() > 1 ){
-        frequentRenterPoints++;
-    }
-
-    return frequentRenterPoints;
+    return _movie.addFrequentRenterPoints(_daysRented);
 }
 
 
