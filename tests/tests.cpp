@@ -6,7 +6,7 @@
 #include "../sources/prices/PriceNewRelease.h"
 #include "../sources/prices/PriceChildren.h"
 
-TEST(customer, statement)
+TEST(MainTest, MainFunctionStatemetn)
 {
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid"), 7));
@@ -20,4 +20,5 @@ TEST(customer, statement)
                                     "Amount owed is 26\n"
                                     "You earned 4 frequent renter points");
 }
+
 
