@@ -4,22 +4,26 @@
 #include "../sources/prices/PriceNewRelease.h"
 #include "../sources/prices/PriceChildren.h"
 
-TEST(MovieTests, basics)
+TEST(MovieTests, testTitle)
 {
     const std::string TITLE = "The Room";
-    /*
-    MockingMovie mocking(TITLE);
-    EXPECT_CALL(mocking, calculateAmount(::testing::_)).WillRepeatedly(testing::Return(21.5));
-
-     */
-
     Movie movie(TITLE);
     ASSERT_EQ(TITLE, movie.getTitle());
+}
+
+TEST(MovieTests, testRegularPrice)
+{
+    const std::string TITLE = "Troll 2";
+    Movie movie(TITLE);
     ASSERT_EQ(6.5, movie.getPriceCode()->priceByType(5));
     ASSERT_EQ(2, movie.getPriceCode()->priceByType(2));
 }
 
-TEST(MovieTests, regularPrice)
+TEST(MovieTests, testChildrenPrice)
 {
+    const std::string TITLE = "Dünyayı Kurtaran Adam";
+    Movie movie(TITLE, PriceChildren::getInstance());
+    ASSERT_EQ(12, movie.getPriceCode()->priceByType(10));
+    ASSERT_EQ(1.5, movie.getPriceCode()->priceByType(3));
 
 }
