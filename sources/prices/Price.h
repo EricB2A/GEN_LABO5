@@ -4,9 +4,8 @@
 
 class Price{
 public:
-
-    virtual int frequentRenterPointsByType(int daysRented) = 0;
-    virtual double priceByType(int dayRented) = 0;
+    virtual int frequentRenterPointsByType(int daysRented) const = 0;
+    virtual double priceByType(int dayRented) const = 0;
 
 };
 

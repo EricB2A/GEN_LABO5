@@ -6,7 +6,7 @@
 
 class Movie {
 public:
-    Movie( const std::string& title, Price* priceCode = new PriceRegular() );
+    Movie( const std::string& title, Price* priceCode = PriceRegular::getInstance() );
 
     Price* getPriceCode() const;
     void setPriceCode( Price* price );

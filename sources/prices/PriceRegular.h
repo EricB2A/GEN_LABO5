@@ -6,8 +6,13 @@
 class PriceRegular : public Price {
 public:
 
-    double priceByType(int daysRented);
-    int frequentRenterPointsByType(int daysRented);
+    double priceByType(int daysRented) const;
+    int frequentRenterPointsByType(int daysRented) const;
+    static Price* getInstance();
+
+private:
+    PriceRegular() = default;
+    static Price* instance;
 };
 
 #endif //PRICEREGULAR_H

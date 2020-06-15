@@ -9,8 +9,8 @@ int main() {
 
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid"), 7));
-    customer.addRental( Rental( Movie( "Avengers: Endgame", new PriceNewRelease()), 5));
-    customer.addRental( Rental( Movie("Snow White", new PriceChildren()), 3 ));
+    customer.addRental( Rental( Movie( "Avengers: Endgame", PriceNewRelease::getInstance()), 5));
+    customer.addRental( Rental( Movie("Snow White", PriceChildren::getInstance()), 3 ));
 
     std::cout << customer.statement() << std::endl;
 

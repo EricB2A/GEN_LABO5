@@ -10,8 +10,8 @@ TEST(customer, statement)
 {
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid"), 7));
-    customer.addRental( Rental( Movie( "Avengers: Endgame", new PriceNewRelease()), 5));
-    customer.addRental( Rental( Movie("Snow White", new PriceChildren()), 3 ));
+    customer.addRental( Rental( Movie( "Avengers: Endgame", PriceNewRelease::getInstance()), 5));
+    customer.addRental( Rental( Movie("Snow White", PriceChildren::getInstance()), 3 ));
 
     EXPECT_EQ(customer.statement(), "Rental Record for Olivier\n"
                                     "\tKarate Kid\t9.5\n"
