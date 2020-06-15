@@ -1,10 +1,5 @@
 #include "Movie.h"
 
-const int Movie::CHILDRENS;
-const int Movie::REGULAR;
-const int Movie::NEW_RELEASE;
-
-
 Movie::Movie( const std::string& title, Price* priceCode )
         : _title( title )
         , _priceCode( priceCode )
