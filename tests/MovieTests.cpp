@@ -25,5 +25,12 @@ TEST(MovieTests, testChildrenPrice)
     Movie movie(TITLE, PriceChildren::getInstance());
     ASSERT_EQ(12, movie.getPriceCode()->priceByType(10));
     ASSERT_EQ(1.5, movie.getPriceCode()->priceByType(3));
+}
 
+TEST(MovieTests, testNewReleasePrice)
+{
+    const std::string TITLE = "Plan 9 from Outer Space";
+    Movie movie(TITLE, PriceNewRelease::getInstance());
+    ASSERT_EQ(3, movie.getPriceCode()->priceByType(1));
+    ASSERT_EQ(15, movie.getPriceCode()->priceByType(5));
 }
