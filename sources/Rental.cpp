@@ -12,9 +12,6 @@ int Rental::getDaysRented() const { return _daysRented; }
 const Movie& Rental::getMovie() const { return _movie; }
 
 double Rental::calculateAmount(){
-
-
-
     return _movie.calculateAmount(_daysRented);
 }
 

@@ -8,8 +8,6 @@ using std::vector;
 
 using namespace std;
 
-
-
 string Customer::statement()
 {
     double totalAmount = 0;
@@ -28,4 +26,16 @@ string Customer::statement()
     result << "You earned " << frequentRenterPoints
            << " frequent renter points";
     return result.str();
+}
+
+Customer::Customer() {}
+
+Customer::Customer( const string& name ) : _name( name ) {}
+
+string Customer::getName() const {
+    return _name;
+}
+
+void Customer::addRental( const Rental& arg ) {
+    _rentals.push_back( arg );
 }
