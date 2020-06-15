@@ -2,7 +2,7 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 #include <string>
-#include "prices/price.h"
+#include "prices/PriceRegular.h"
 
 class Movie {
 public:
@@ -10,7 +10,7 @@ public:
     static const int REGULAR     = 0;
     static const int NEW_RELEASE = 1;
 
-    Movie( const std::string& title, Price* priceCode = new Price() );
+    Movie( const std::string& title, Price* priceCode = new PriceRegular() );
 
     Price* getPriceCode() const;
     void setPriceCode( Price* price );

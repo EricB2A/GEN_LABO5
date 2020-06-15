@@ -39,7 +39,7 @@ add_executable(GEN_LABO5 sources/Customer.cpp
         sources/Movie.cpp
         sources/Movie.h
         sources/Rental.h
-        tests/tests.cpp sources/Rental.cpp sources/prices/price.h)
+        tests/tests.cpp sources/Rental.cpp sources/prices/Price.h sources/prices/PriceNewRelease.h sources/prices/PriceChildren.h sources/prices/PriceRegular.h)
 
 target_link_libraries(GEN_LABO5 gtest gmock_main)
 add_test(NAME TEST COMMAND GEN_LABO5)

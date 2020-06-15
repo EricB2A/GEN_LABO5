@@ -17,7 +17,7 @@ void Movie::setPriceCode( Price* price) {  }
 std::string Movie::getTitle() const { return _title; }
 
 int Movie::addFrequentRenterPoints(int dayRented){
-    return _priceCode->FrequentRenterPointsByType(dayRented);
+    return _priceCode->frequentRenterPointsByType(dayRented);
 }
 
 double Movie::calculateAmount(int dayRented){
