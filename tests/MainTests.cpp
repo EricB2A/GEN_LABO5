@@ -6,7 +6,7 @@
 #include "../sources/prices/PriceNewRelease.h"
 #include "../sources/prices/PriceChildren.h"
 
-TEST(MainTest, MainFunctionStatemetn)
+TEST(MainTests, MainFunctionStatemetn)
 {
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid"), 7));

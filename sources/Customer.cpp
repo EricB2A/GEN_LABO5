@@ -21,6 +21,7 @@ string Customer::statement()
         frequentRenterPoints += each.addFrequentRenterPoints();
         result << each.statement();
     }
+
     // add footer lines
     result << "Amount owed is " << totalAmount << "\n";
     result << "You earned " << frequentRenterPoints

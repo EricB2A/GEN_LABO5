@@ -19,10 +19,8 @@ int Rental::addFrequentRenterPoints(){
     return _movie.addFrequentRenterPoints(_daysRented);
 }
 
-
 std::string Rental::statement() {
     std::ostringstream result;
     result << "\t" << getMovie().getTitle() << "\t" << calculateAmount() << "\n";
-
     return result.str();
 }
